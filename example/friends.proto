@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package lqc;  
+option cc_generic_services = true;
+
+message resCode{
+    int32 errcode = 1;  //成功的话errcode为0
+    bytes errmsg = 2;
+}
+message user{
+    uint32 id = 1;
+    bytes name = 2;
+}
+
+message getFriendsRequest{
+    uint32 id = 1;
+}
+
+message getFriendsResponse{
+    repeated user friends = 1;
+    resCode res = 2;
+}
+
+service FriendsServiceRpc{
+    rpc getFriends(getFriendsRequest) returns (getFriendsResponse);
+    // rpc register (RegisterRequest) returns (RegisterResponse);
+}

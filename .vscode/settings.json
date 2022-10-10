@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "*.inc": "cpp",
+        "iostream": "cpp",
+        "functional": "cpp",
+        "atomic": "cpp",
+        "ostream": "cpp"
+    }
+}

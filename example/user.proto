@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package lqc;  
+option cc_generic_services = true;
+message resCode{
+    int32 errcode = 1;  //成功的话errcode为0
+    bytes errmsg = 2;
+}
+message LoginRequest{
+    int32 id = 1;
+    bytes pwd = 2;
+}
+message LoginResponse{
+    resCode res = 1;
+    bool isSuccess = 2;
+}
+
+// message RegisterRequest{
+//     int32 id = 1;
+//     bytes name = 2;
+//     bytes pwd = 3;
+// }
+// message RegisterResponse{
+//     resCode res = 1;
+//     bool isSuccess = 2;
+// }
+
+
+service UserServiceRpc{
+    rpc login (LoginRequest) returns (LoginResponse);
+    // rpc register (RegisterRequest) returns (RegisterResponse);
+}

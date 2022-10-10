@@ -1,0 +1,1 @@
+/usr/bin/g++ -g -rdynamic CMakeFiles/rpcUser.dir/call_getFriendsService.cc.o CMakeFiles/rpcUser.dir/__/friends.pb.cc.o -o ../../../bin/rpcUser   -L/root/lqc/rpc/lib  -Wl,-rpath,/root/lqc/rpc/lib ../../src/librpc.a -lprotobuf -lmuduo_net -lmuduo_base -lpthread -lzookeeper_mt 

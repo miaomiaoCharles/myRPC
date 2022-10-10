@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/root/lqc/rpc/build/src",
+  "command": "/usr/bin/g++  -I/root/lqc/rpc/src/include -I/root/lqc/rpc/example -I/root/lqc/rpc/example/callee -I/root/lqc/rpc/example/caller -g -o CMakeFiles/rpc.dir/rpcApplication.cpp.o -c /root/lqc/rpc/src/rpcApplication.cpp",
+  "file": "/root/lqc/rpc/src/rpcApplication.cpp"
+},
+{
+  "directory": "/root/lqc/rpc/build/src",
+  "command": "/usr/bin/g++  -I/root/lqc/rpc/src/include -I/root/lqc/rpc/example -I/root/lqc/rpc/example/callee -I/root/lqc/rpc/example/caller -g -o CMakeFiles/rpc.dir/rpcConfig.cpp.o -c /root/lqc/rpc/src/rpcConfig.cpp",
+  "file": "/root/lqc/rpc/src/rpcConfig.cpp"
+},
+{
+  "directory": "/root/lqc/rpc/build/src",
+  "command": "/usr/bin/g++  -I/root/lqc/rpc/src/include -I/root/lqc/rpc/example -I/root/lqc/rpc/example/callee -I/root/lqc/rpc/example/caller -g -o CMakeFiles/rpc.dir/rpcHeader.pb.cc.o -c /root/lqc/rpc/src/rpcHeader.pb.cc",
+  "file": "/root/lqc/rpc/src/rpcHeader.pb.cc"
+},
+{
+  "directory": "/root/lqc/rpc/build/src",
+  "command": "/usr/bin/g++  -I/root/lqc/rpc/src/include -I/root/lqc/rpc/example -I/root/lqc/rpc/example/callee -I/root/lqc/rpc/example/caller -g -o CMakeFiles/rpc.dir/rpcProvider.cpp.o -c /root/lqc/rpc/src/rpcProvider.cpp",
+  "file": "/root/lqc/rpc/src/rpcProvider.cpp"
+},
+{
+  "directory": "/root/lqc/rpc/build/src",
+  "command": "/usr/bin/g++  -I/root/lqc/rpc/src/include -I/root/lqc/rpc/example -I/root/lqc/rpc/example/callee -I/root/lqc/rpc/example/caller -g -o CMakeFiles/rpc.dir/rpcChannel.cpp.o -c /root/lqc/rpc/src/rpcChannel.cpp",
+  "file": "/root/lqc/rpc/src/rpcChannel.cpp"
+},
+{
+  "directory": "/root/lqc/rpc/build/src",
+  "command": "/usr/bin/g++  -I/root/lqc/rpc/src/include -I/root/lqc/rpc/example -I/root/lqc/rpc/example/callee -I/root/lqc/rpc/example/caller -g -o CMakeFiles/rpc.dir/rpcControler.cpp.o -c /root/lqc/rpc/src/rpcControler.cpp",
+  "file": "/root/lqc/rpc/src/rpcControler.cpp"
+},
+{
+  "directory": "/root/lqc/rpc/build/src",
+  "command": "/usr/bin/g++  -I/root/lqc/rpc/src/include -I/root/lqc/rpc/example -I/root/lqc/rpc/example/callee -I/root/lqc/rpc/example/caller -g -o CMakeFiles/rpc.dir/logger.cpp.o -c /root/lqc/rpc/src/logger.cpp",
+  "file": "/root/lqc/rpc/src/logger.cpp"
+},
+{
+  "directory": "/root/lqc/rpc/build/src",
+  "command": "/usr/bin/g++  -I/root/lqc/rpc/src/include -I/root/lqc/rpc/example -I/root/lqc/rpc/example/callee -I/root/lqc/rpc/example/caller -g -o CMakeFiles/rpc.dir/zookeeper.cpp.o -c /root/lqc/rpc/src/zookeeper.cpp",
+  "file": "/root/lqc/rpc/src/zookeeper.cpp"
+},
+{
+  "directory": "/root/lqc/rpc/build/example/callee",
+  "command": "/usr/bin/g++  -I/root/lqc/rpc/src/include -I/root/lqc/rpc/example -I/root/lqc/rpc/example/callee -I/root/lqc/rpc/example/caller -g -o CMakeFiles/provider.dir/getFriends.cc.o -c /root/lqc/rpc/example/callee/getFriends.cc",
+  "file": "/root/lqc/rpc/example/callee/getFriends.cc"
+},
+{
+  "directory": "/root/lqc/rpc/build/example/callee",
+  "command": "/usr/bin/g++  -I/root/lqc/rpc/src/include -I/root/lqc/rpc/example -I/root/lqc/rpc/example/callee -I/root/lqc/rpc/example/caller -g -o CMakeFiles/provider.dir/__/friends.pb.cc.o -c /root/lqc/rpc/example/friends.pb.cc",
+  "file": "/root/lqc/rpc/example/friends.pb.cc"
+},
+{
+  "directory": "/root/lqc/rpc/build/example/caller",
+  "command": "/usr/bin/g++  -I/root/lqc/rpc/src/include -I/root/lqc/rpc/example -I/root/lqc/rpc/example/callee -I/root/lqc/rpc/example/caller -g -o CMakeFiles/rpcUser.dir/call_getFriendsService.cc.o -c /root/lqc/rpc/example/caller/call_getFriendsService.cc",
+  "file": "/root/lqc/rpc/example/caller/call_getFriendsService.cc"
+},
+{
+  "directory": "/root/lqc/rpc/build/example/caller",
+  "command": "/usr/bin/g++  -I/root/lqc/rpc/src/include -I/root/lqc/rpc/example -I/root/lqc/rpc/example/callee -I/root/lqc/rpc/example/caller -g -o CMakeFiles/rpcUser.dir/__/friends.pb.cc.o -c /root/lqc/rpc/example/friends.pb.cc",
+  "file": "/root/lqc/rpc/example/friends.pb.cc"
+}
+]

@@ -28,7 +28,7 @@ public:
                         resCode* res = response->mutable_res();
                         res->set_errcode(0);
                         res->set_errmsg("");
-                        done->Run();
+                        done->Run(); //响应消息的序列化及发送
                        }
     // void register(google::protobuf::RpcController* controller,
     //                    const ::lqc::RegisterRequest* request,

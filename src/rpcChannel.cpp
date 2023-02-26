@@ -18,12 +18,12 @@ void MyRpcChannel::CallMethod(const MethodDescriptor* method,
         //rpcHeader的长度 + rpcHeader（service_name + method_name + args_size) + args
         const google::protobuf::ServiceDescriptor* sd = method->service();
         string methodName = method->name();
-        string serviceName = sd->name();
+        string serviceName = sd->name(); 
         uint32 args_size = 0;
         
         string args;
         if(request->SerializePartialToString(&args)){
-            args_size = args.size();
+            args_size = args.size(); 
         }else{
             controller->SetFailed("调用请求序列化失败");
             return;

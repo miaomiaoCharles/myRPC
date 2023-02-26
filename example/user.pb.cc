@@ -707,7 +707,7 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
         1, _Internal::res(this), target, stream);
-  }
+  } 
 
   // bool isSuccess = 2;
   if (this->issuccess() != 0) {

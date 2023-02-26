@@ -1,7 +1,7 @@
 #include <iostream>
 #include "user.pb.h"
 #include "rpcApplication.hpp"
-#include "rpcChannel.hpp"
+#include "rpcControler.hpp"
 using namespace std;
 using namespace lqc;
 
@@ -12,12 +12,18 @@ int main(int argc, char** argv){
     request.set_id(123456);
     request.set_pwd("lqc8193932");
     lqc::LoginResponse response;
-    stub.login(nullptr, &request, &response, nullptr);
-    if(response.res().errcode() == 0){
-        cout << "rpc调用成功" << endl;
+    Controler* controler = new Controler();
+    stub.login(controler, &request, &response, nullptr);
+    if(controler->Failed()){
+        cout << controler->ErrorText() << endl;
     }else{
-        cout << "rpc调用失败：" << response.res().errmsg() << endl;
+        if(response.res().errcode() == 0){
+            cout << "rpc调用成功" << endl;
+        }else{
+            cout << "rpc调用失败：" << response.res().errmsg() << endl;
+        }
     }
+
 
     // lqc::RegisterRequest RegisterRequest;
     // RegisterRequest.set_id(123);

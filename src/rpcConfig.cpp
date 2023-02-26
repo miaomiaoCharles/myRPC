@@ -11,7 +11,7 @@ void trim(string& bufStr){    //该函数用于数据清洗时去除前后多余
 }
 
 
-void rpcConfig::loadConfig(const char* config_file){
+void RpcConfig::loadConfig(const char* config_file){
     FILE* pf = fopen(config_file,"r");
     if(pf == nullptr){
         cout << config_file << " 不存在" << endl;
@@ -33,10 +33,9 @@ void rpcConfig::loadConfig(const char* config_file){
         string value = bufStr.substr(idx+1, bufStr.size()- idx-1);
         trim(value);
         configMap.insert({key,value});
-
     }
 }
-string rpcConfig::load(string key){
+string RpcConfig::load(string key){
     auto it = configMap.find(key);
     if(it != configMap.end()){
         return it->second;

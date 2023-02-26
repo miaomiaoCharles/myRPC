@@ -17,7 +17,7 @@ void RpcProvider::notifyService(google::protobuf::Service* service){
         const google::protobuf::MethodDescriptor* methodDescription = serviceDescription->method(i);
         const string methodName = methodDescription->name();
         //采用方法名字当key，方法抽象描述当value是因为调用时候是只知道方法名字的，根据这个map来获得描述从而获得真正的函数。
-        service_info._methodMap.insert({methodName, methodDescription});
+        service_info._methodMap.insert({methodName, methodDescription});   
     }
     _serviceMap.insert({serviceName, service_info});
 }
@@ -25,12 +25,12 @@ void RpcProvider::start(){
     string ip = RpcApplication::getRpcApplication().GetConfig().load("rpcserverip");
     uint16_t port = atoi(RpcApplication::getRpcApplication().GetConfig().load("rpcserverport").c_str());
 
-    muduo::net::InetAddress address(ip, port);   //muduo的五步  1.设置InetAddress地址，将服务器端口号和ip写进去
+    InetAddress address(port, ip);   //muduo的五步  1.设置InetAddress地址，将服务器端口号和ip写进去
    //2.设置server对象，里面传递的eventloop指针需要自己在hpp里的私有里设置
-    muduo::net::TcpServer server(&_eventLoop, address, "rpcProvider");  
+    TcpServer server(&_eventLoop, address, "rpcProvider");  
     //3.设置connection回调和message回调，里面传递的函数应该用bind绑定，因为这些回调函数是在类的私有里设置的，要多传this。
-    server.setConnectionCallback(bind(&RpcProvider::onConnection, this, placeholders::_1));
-    server.setMessageCallback(bind(&RpcProvider:: onMessage, this, placeholders::_1, placeholders::_2, placeholders::_3));
+    server.setConnectionCallBack(bind(&RpcProvider::onConnection, this, placeholders::_1));
+    server.setMessageCallBack(bind(&RpcProvider:: onMessage, this, placeholders::_1, placeholders::_2, placeholders::_3));
     //4.设置线程数量，一个网络线程三个业务线程
     server.setThreadNum(4);
 
@@ -46,21 +46,21 @@ void RpcProvider::start(){
             zkcil.create(method_path.c_str(),method_data, strlen(method_data),ZOO_EPHEMERAL);
         }
     }
-
+    cout << "RpcProvider start service at ip:" << ip << " port:" << port << std::endl;
     //5.最后启动服务
     server.start();
     cout << "rpc服务已启动" << endl;
     _eventLoop.loop();
 }
 
-void RpcProvider::onConnection(const muduo::net::TcpConnectionPtr& conn){
+void RpcProvider::onConnection(const TcpConnectionPtr& conn){
     if(!conn->connected()){
         conn->shutdown();
     }
 }
-
-void RpcProvider::onMessage(const muduo::net::TcpConnectionPtr& conn, muduo::net::Buffer* buffer, muduo::Timestamp time){
-    string reciveBuf = buffer->retrieveAllAsString();
+//传输格式：前4个字节记录服务名和方法名长度，之后参数长度，之后参数
+void RpcProvider::onMessage(const TcpConnectionPtr& conn, Buffer* buffer, TimeStamp time){
+    string reciveBuf = buffer->retriveAllString();
     uint32_t header_size = 4;
     reciveBuf.copy((char*)&header_size,4,0);
     //开始反序列化
@@ -68,26 +68,26 @@ void RpcProvider::onMessage(const muduo::net::TcpConnectionPtr& conn, muduo::net
     rpc::RpcHeader rpcheader;
     string serviceName;
     string methodName;
-    int argSize;
+    int argSize; 
     if(rpcheader.ParseFromString(rpc_header_str)){
         serviceName = rpcheader.service_name();
         methodName = rpcheader.method_name();
         argSize = rpcheader.args_size();
-        Logger::getInstance().Log("log:远端rpc请求反序列化成功：" + methodName);
+        RPCLogger::GetInstance().Log("log:远端rpc请求反序列化成功：" + methodName);
     }else{
-        Logger::getInstance().Log("error:数据" + rpc_header_str+"反序列化失败");
+        RPCLogger::GetInstance().Log("error:数据" + rpc_header_str+"反序列化失败");
         return;
     }
     string args_str = reciveBuf.substr(4+header_size, argSize);
     auto it = _serviceMap.find(serviceName);
     if(it == _serviceMap.end()){
-        Logger::getInstance().Log("error:找不到service：" + rpc_header_str+"反序列化失败");
+        RPCLogger::GetInstance().Log("error:找不到service：" + rpc_header_str+"反序列化失败");
         return;
     }
     auto serviceInfo = it->second;
     auto mit = serviceInfo._methodMap.find(methodName);
     if(mit == serviceInfo._methodMap.end()){
-        Logger::getInstance().Log("error:找不到method：" + methodName);
+        RPCLogger::GetInstance().Log("error:找不到method：" + methodName);
         return;
     }
     google::protobuf::Service* service = it->second._service;
@@ -95,25 +95,24 @@ void RpcProvider::onMessage(const muduo::net::TcpConnectionPtr& conn, muduo::net
     //生成request和response
     google::protobuf::Message* request = service->GetRequestPrototype(methodDes).New();
     if(!request->ParseFromString(args_str)){
-        Logger::getInstance().Log("error:参数反序列化失败:" + args_str);
+        RPCLogger::GetInstance().Log("error:参数反序列化失败:" + args_str);
         return;
     }
     google::protobuf::Message* response = service->GetResponsePrototype(methodDes).New();
     //绑定一个closure回调函数
     google::protobuf::Closure* done =  
-    google::protobuf::NewCallback<RpcProvider, const muduo::net::TcpConnectionPtr&, google::protobuf::Message* >(this, &RpcProvider::sendResponse, conn, response);
-    //调用方法
-    //调用的是callee的方法。
+    google::protobuf::NewCallback<RpcProvider, const TcpConnectionPtr&, google::protobuf::Message* >(this, &RpcProvider::sendResponse, conn, response);
+    //调用方法 
     service->CallMethod(methodDes,nullptr,request,response, done);
 }
 //closure的回调方法，用于rpc的序列化以及发送回去
-void RpcProvider::sendResponse(const muduo::net::TcpConnectionPtr& conn, google::protobuf::Message* response){
+void RpcProvider::sendResponse(const TcpConnectionPtr& conn, google::protobuf::Message* response){
     string responseStr;
     if(response->SerializeToString(&responseStr)){
         conn->send(responseStr);
-        Logger::getInstance().Log("log:远端rpc请求的回复已发送:" + responseStr);
+        RPCLogger::GetInstance().Log("log:远端rpc请求的回复已发送:" + responseStr);
     }else{
-         Logger::getInstance().Log("error:response序列化失败");
+        RPCLogger::GetInstance().Log("error:response序列化失败");
     }
     conn->shutdown();
 }

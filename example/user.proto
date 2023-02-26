@@ -13,18 +13,7 @@ message LoginRequest{
 message LoginResponse{
     resCode res = 1;
     bool isSuccess = 2;
-}
-
-// message RegisterRequest{
-//     int32 id = 1;
-//     bytes name = 2;
-//     bytes pwd = 3;
-// }
-// message RegisterResponse{
-//     resCode res = 1;
-//     bool isSuccess = 2;
-// }
-
+} 
 
 service UserServiceRpc{
     rpc login (LoginRequest) returns (LoginResponse);

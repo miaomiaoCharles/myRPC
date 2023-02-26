@@ -3,7 +3,7 @@
 #include <google/protobuf/service.h>
 #include <google/protobuf/message.h>
 #include <google/protobuf/descriptor.h>
-#include "logger.hpp"
+#include "rpcLogger.hpp"
 using namespace std;
 using namespace google::protobuf;
 

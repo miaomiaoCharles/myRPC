@@ -3,12 +3,16 @@
 #include <string>
 #include <unistd.h>
 using namespace std;
-rpcConfig RpcApplication::_config;
+RpcConfig RpcApplication::_config;
+int RpcApplication::_started = 0;
 void showArgsHelp(){
-    cout << "format command -i <configfile>" << endl;
+    cout << "format：command -i <configfile>" << endl;
 }
 
 void RpcApplication::init(int argc, char** argv){
+    if(_started ++ != 0){
+        return;
+    }
     if(argc < 2){
         showArgsHelp();
         exit(EXIT_FAILURE);
@@ -40,7 +44,7 @@ RpcApplication& RpcApplication::getRpcApplication(){
         static RpcApplication app;
         return app;
 }
-rpcConfig& RpcApplication::GetConfig()
+RpcConfig& RpcApplication::GetConfig()
 {
     return _config;
 }

@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/build/src",
+  "command": "/usr/bin/c++   -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/include -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller  -g   -o CMakeFiles/rpc.dir/rpcApplication.cpp.o -c /home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcApplication.cpp",
+  "file": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcApplication.cpp"
+},
+{
+  "directory": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/build/src",
+  "command": "/usr/bin/c++   -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/include -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller  -g   -o CMakeFiles/rpc.dir/rpcConfig.cpp.o -c /home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcConfig.cpp",
+  "file": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcConfig.cpp"
+},
+{
+  "directory": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/build/src",
+  "command": "/usr/bin/c++   -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/include -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller  -g   -o CMakeFiles/rpc.dir/rpcHeader.pb.cc.o -c /home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcHeader.pb.cc",
+  "file": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcHeader.pb.cc"
+},
+{
+  "directory": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/build/src",
+  "command": "/usr/bin/c++   -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/include -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller  -g   -o CMakeFiles/rpc.dir/rpcProvider.cpp.o -c /home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcProvider.cpp",
+  "file": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcProvider.cpp"
+},
+{
+  "directory": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/build/src",
+  "command": "/usr/bin/c++   -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/include -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller  -g   -o CMakeFiles/rpc.dir/rpcChannel.cpp.o -c /home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcChannel.cpp",
+  "file": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcChannel.cpp"
+},
+{
+  "directory": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/build/src",
+  "command": "/usr/bin/c++   -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/include -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller  -g   -o CMakeFiles/rpc.dir/rpcControler.cpp.o -c /home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcControler.cpp",
+  "file": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcControler.cpp"
+},
+{
+  "directory": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/build/src",
+  "command": "/usr/bin/c++   -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/include -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller  -g   -o CMakeFiles/rpc.dir/rpcLogger.cpp.o -c /home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcLogger.cpp",
+  "file": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/rpcLogger.cpp"
+},
+{
+  "directory": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/build/src",
+  "command": "/usr/bin/c++   -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/include -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller  -g   -o CMakeFiles/rpc.dir/zookeeper.cpp.o -c /home/ubuntu/lqc/-muduo-protobuf-rpc-/src/zookeeper.cpp",
+  "file": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/zookeeper.cpp"
+},
+{
+  "directory": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/build/example/callee",
+  "command": "/usr/bin/c++   -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/include -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller  -g   -o CMakeFiles/provider.dir/userService.cc.o -c /home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee/userService.cc",
+  "file": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee/userService.cc"
+},
+{
+  "directory": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/build/example/callee",
+  "command": "/usr/bin/c++   -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/include -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller  -g   -o CMakeFiles/provider.dir/__/user.pb.cc.o -c /home/ubuntu/lqc/-muduo-protobuf-rpc-/example/user.pb.cc",
+  "file": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/user.pb.cc"
+},
+{
+  "directory": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/build/example/caller",
+  "command": "/usr/bin/c++   -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/include -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller  -g   -o CMakeFiles/rpcUser.dir/call_userService.cc.o -c /home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller/call_userService.cc",
+  "file": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller/call_userService.cc"
+},
+{
+  "directory": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/build/example/caller",
+  "command": "/usr/bin/c++   -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/src/include -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/callee -I/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/caller  -g   -o CMakeFiles/rpcUser.dir/__/user.pb.cc.o -c /home/ubuntu/lqc/-muduo-protobuf-rpc-/example/user.pb.cc",
+  "file": "/home/ubuntu/lqc/-muduo-protobuf-rpc-/example/user.pb.cc"
+}
+]

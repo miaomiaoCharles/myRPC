@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/provider.dir/userService.cc.o CMakeFiles/provider.dir/__/user.pb.cc.o  -o ../../../bin/provider  -L/home/ubuntu/lqc/-muduo-protobuf-rpc-/lib -Wl,-rpath,/home/ubuntu/lqc/-muduo-protobuf-rpc-/lib ../../../lib/librpc.a -lprotobuf -lmyMuduo -lpthread -lzookeeper_mt 

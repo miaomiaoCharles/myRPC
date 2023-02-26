@@ -25,7 +25,7 @@ sudo ./autobuild.sh
 首先RPC框架前，需要在/bin目录的配置文件里填写配置信息，填写RPC节点的ip与port，以及zookeeper的ip与port。之后启动提供方客户端，输入以下指令：
 
 ```bash
-./ provider -i testConfig.conf
+./provider -i testConfig.conf
 ```
 
 其中的[testConfig.conf](https://github.com/miaomiaoCharles/-muduo-protobuf-rpc-/blob/main/bin/testConfig.conf)是配置文件名字。启动后，提供方将进入监听状态，当有函数调用请求时，将执行本地函数并返回结果。

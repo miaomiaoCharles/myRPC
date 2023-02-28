@@ -1,4 +1,4 @@
-# -muduo-protobuf-rpc-
+# myRPC
 这是一个基于protobuf的RPC网络通信框架，可以实现函数的远程调用功能，并且使用了自己写的网络库框架，使其能够接受高并发的远程函数调用。其中数据的序列化及其反序列化由protobuf实现，使用zookeeper作为服务器中间件。数据的发送及其回调由我写的另一个网络库框架实现：https://github.com/miaomiaoCharles/myMuduo
 
 **项目动机：**
